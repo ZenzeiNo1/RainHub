@@ -1,0 +1,183 @@
+if game.PlaceId == 4954752502 then
+
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/naypramx/Ui__Project/Script/XeNonUi", true))()
+    local Window = Library:CreateWindow("Rain Hub", Enum.KeyCode.RightControl)
+    
+    local Main = Window:CreateTab("Main")
+    local Teleport = Window:CreateTab("Teleport")
+    local Credit = Window:CreateTab("Credit")
+    local MainSection = Main:CreateSector("Auto Farm", "left")
+    local TeleportSection = Teleport:CreateSector("Teleport", "left")
+    local CreditSection = Credit:CreateSector("Credit", "left")
+
+    -----Teleport-----
+
+    TeleportSection:AddButton("ObbyFinishRoom", function()
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HumanoidRootPart.CFrame = CFrame.new(21.1753006, 254.999954, 3023.06104, -0.99995625, -6.40499707e-08, -0.00935108308, -6.34701323e-08, 1, -6.23041103e-08, 0.00935108308, -6.17078726e-08, -0.99995625)
+    end)
+    
+    TeleportSection:AddButton("Intant Finish", function()
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        local tween = TweenService:Create(HumanoidRootPart,TweenInfo.new(0.000000000000000001), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+        local tween1 = TweenService:Create(HumanoidRootPart,TweenInfo.new(0.3), {CFrame = CFrame.new(-117.977051, 254.000153, 48.1687126, -0.000364676962, 1.55261937e-08, 0.99999994, -7.00774336e-08, 1, -1.55517501e-08, -0.99999994, -7.00831038e-08, -0.000364676962)})
+        local tween2 = TweenService:Create(HumanoidRootPart,TweenInfo.new(0.3), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+        tween:Play()
+        wait(0.33)
+        tween1:Play()
+        wait(0.3)
+        tween2:Play()
+    end)
+
+    TeleportSection:AddSeperator("Teleport")
+
+    TeleportSection:AddDropdown("Teleport", {"Start", "Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5", "Finish", "FinishRoomIn", "FinishRoomOut"}, "None", false, function(v)
+        SS = v
+    end)
+
+    TeleportSection:AddButton("Teleport", function()
+    local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+    if SS == "Start" then
+        local Tween = TweenService:Create(HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+        Tween:Play()
+    elseif SS == "Stage 1" then
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HumanoidRootPart.CFrame = CFrame.new(25.188982, 3.49987745, 49.171566, -0.0348999724, 0, 0.999390781, 0, 1, 0, -0.999390781, 0, -0.0348999724)
+    elseif SS == "Stage 2" then
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HumanoidRootPart.CFrame = CFrame.new(-65.5682373, 53.5001564, 47.1625671, 0.0784431472, -7.92956953e-08, -0.996918619, 6.27545873e-08, 1, -7.46029158e-08, 0.996918619, -5.67091227e-08, 0.0784431472)
+    elseif SS == "Stage 3" then
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HumanoidRootPart.CFrame = CFrame.new(25.2871399, 103.500114, 49.0800743, -0.0174421854, -3.79158998e-08, 0.999847889, 9.30284827e-08, 1, 3.95445348e-08, -0.999847889, 9.37040738e-08, -0.0174421854)
+    elseif SS == "Stage 4" then
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HumanoidRootPart.CFrame = CFrame.new(-66.388443, 153.499771, 47.5095177, 0.0436190739, -7.43006581e-08, -0.999048233, -7.140234e-08, 1, -7.74889131e-08, 0.999048233, 7.47143716e-08, 0.0436190739)
+    elseif SS == "Stage 5" then
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HumanoidRootPart.CFrame = CFrame.new(25.6786957, 203.500092, 48.7804222, -0.034902595, -8.53443254e-08, 0.999390721, 1.80039237e-08, 1, 8.60251248e-08, -0.999390721, 2.09954543e-08, -0.034902595)
+    elseif SS == "Finish" then
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        local TweenService = game:GetService("TweenService")
+        local Tween1 = TweenService:Create(HumanoidRootPart,TweenInfo.new(1), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+        local Tween = TweenService:Create(HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(-117.977051, 254.000153, 48.1687126, -0.000364676962, 1.55261937e-08, 0.99999994, -7.00774336e-08, 1, -1.55517501e-08, -0.99999994, -7.00831038e-08, -0.000364676962)})
+        Tween1:Play()
+        wait(1)
+        Tween:Play()
+    elseif SS == "FinishRoomOut" then
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        local TweenService = game:GetService("TweenService")
+
+        local Tween = TweenService:Create(HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(1.44993114, 254.000076, 101.765411, -0.930872679, -3.40251134e-08, -0.36534369, -4.79285873e-08, 1, 2.89872197e-08, 0.36534369, 4.44938166e-08, -0.930872679)})
+        Tween:Play()
+    elseif SS == "FinishRoomIn" then
+        local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        local TweenService = game:GetService("TweenService")
+
+        local Tween = TweenService:Create(HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(28.7164764, 233.999954, 2821.16528, -0.940591991, 6.48861231e-08, -0.339539021, 9.06554121e-08, 1, -6.00332442e-08, 0.339539021, -8.7247841e-08, -0.940591991)})
+        local Tween1 = TweenService:Create(HumanoidRootPart,TweenInfo.new(1), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+        Tween1:Play()
+        wait(1)
+        Tween:Play()
+    end
+    end)
+
+    TeleportSection:AddSeperator("Players")
+
+    player = {}
+    for i,v in pairs(game.Players:GetChildren()) do
+        table.insert(player,v.Name)
+    end
+    TeleportSection:AddDropdown("Teleport Players", player, "None", false, function(names)
+        S = names
+    end)
+
+    TeleportSection:AddButton("Teleport", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[S].Character.HumanoidRootPart.CFrame
+    end)
+
+    TeleportSection:AddButton("Refresh", function()
+        table.clear(player)
+        for i,v in pairs(game.Players:GetChildren()) do
+            table.insert(player,v.Name)
+        end
+    end)
+    
+    
+    -----Credit-----
+    CreditSection:AddButton("Youtube", function()
+        setclipboard(tostring("https://www.youtube.com/channel/UCzMnr-vrNFWnyp3U5vzVWRw"))
+    end)
+
+    -----Main-----
+    
+    MainSection:AddToggle("Auto Farm Coin", false, function(v)
+
+        _G.Toggle = true
+
+        if v then
+            _G.Toggle = true
+        else
+            _G.Toggle = false
+        end
+
+        if v then
+            
+            if _G.Toggle == true then
+                while _G.Toggle == true do
+                    local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+                    local Tween1 = TweenService:Create(HumanoidRootPart,TweenInfo.new(1), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+                    local Tween2 = TweenService:Create(HumanoidRootPart, TweenInfo.new(10), {CFrame = CFrame.new(-117.977051, 254.000153, 48.1687126, -0.000364676962, 1.55261937e-08, 0.99999994, -7.00774336e-08, 1, -1.55517501e-08, -0.99999994, -7.00831038e-08, -0.000364676962)})
+                    local Tween3 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+                    if _G.Toggle == true then
+                    Tween1:Play()
+                    wait(1)
+                    end
+                    if _G.Toggle == true then
+                        Tween2:Play()
+                        wait(10)
+                    end
+                    
+                    Tween3:Play()
+                end
+            end
+        end
+
+end)
+
+if game.PlaceId == 6766156863 then
+
+    local HumanoidRootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+ 
+    local TweenService =  game:GetService("TweenService")
+    
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Rain Hub", "Midnight")
+
+    local MainTab = Window:NewTab("Main")
+    local TeleportTab = Window:NewTab("Teleport")
+    local CreditTab = Window:NewTab("Credit")
+ 
+    local AutoFarmSection = MainTab:NewSection("Auto Farm")
+    local TeleportSection = TeleportTab:NewSection("Teleport")
+    local CreditSection = CreditTab:NewSection("Credit")
+ 
+    AutoFarmSection:NewToggle("Auto Farm", "กดเพื่อ Atuto Farm", function(state)
+     if state then
+         print()
+     end
+     
+     TeleportSection:NewDropdown("Teleport", "กด Teleport", {"Start Area", "Gym Area", "Food Area", "Arcade Area", "Farm Area", "Castle Area", "Steampunk Area", "Disco Area", "Space Area", "Candy Area", "Lab Area", "Tropical Area", "Dino Area", "Retro Area", "Winter Area", "Deep Sea Area"}, function(currentOption)
+
+     end)
+    end)
+end
+
+if game.PlaceId == 6266940721 then
+    
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Rain Hub", "Midnight")
+
+    local MainTab = Window:NewTab("Main")
+
+end
+end
