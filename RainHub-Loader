@@ -1,7 +1,7 @@
 HWID = "HELLO1"
  
 local Server =  syn.request({
-    Url = "https:yn.//rainhubrbx.000webhostapp.com/wejnhgiouehjauiehrjbmklrtedfjbhi9opjherhb?Key=".. _G.Key .."&HWID="..HWID,
+    Url = "https://rainhubrbx.000webhostapp.com/wejnhgiouehjauiehrjbmklrtedfjbhi9opjherhb?Key=".. _G.Key .."&HWID="..HWID,
     Method = "GET"
 }).Body
  
