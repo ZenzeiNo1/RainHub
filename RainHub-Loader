@@ -1,13 +1,16 @@
-if game.PlaceId == 4954752502 then
+local TweenService = game:GetService("TweenService")
 
+if game.PlaceId == 4954752502 then
+    
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/naypramx/Ui__Project/Script/XeNonUi", true))()
     local Window = Library:CreateWindow("Rain Hub", Enum.KeyCode.RightControl)
-    
     local Main = Window:CreateTab("Main")
     local Teleport = Window:CreateTab("Teleport")
+    local Misc = Window:CreateTab("Misc")
     local Credit = Window:CreateTab("Credit")
     local MainSection = Main:CreateSector("Auto Farm", "left")
     local TeleportSection = Teleport:CreateSector("Teleport", "left")
+    local MiscSection = Misc:CreateSector("Misc", "left")
     local CreditSection = Credit:CreateSector("Credit", "left")
 
     -----Teleport-----
@@ -83,22 +86,42 @@ if game.PlaceId == 4954752502 then
 
     TeleportSection:AddSeperator("Players")
 
-    player = {}
+    ply = {}
     for i,v in pairs(game.Players:GetChildren()) do
-        table.insert(player,v.Name)
+        table.insert(ply,v.Name)
     end
-    TeleportSection:AddDropdown("Teleport Players", player, "None", false, function(names)
+    TeleportSection:AddDropdown("Teleport Players", ply, "None", false, function(names)
         S = names
     end)
+
+    TeleportSection:AddToggle("Follow Players", false, function(v)
+        _G.Toggle = true
+
+        if v then
+            _G.Toggle = true
+        else
+            _G.Toggle = false
+        end
+
+        if v then
+            
+            if _G.Toggle == true then
+                while _G.Toggle == true do
+                    wait(0)
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[S].Character.HumanoidRootPart.CFrame
+                    end
+                end
+            end
+        end)
 
     TeleportSection:AddButton("Teleport", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[S].Character.HumanoidRootPart.CFrame
     end)
 
     TeleportSection:AddButton("Refresh", function()
-        table.clear(player)
+        table.clear(ply)
         for i,v in pairs(game.Players:GetChildren()) do
-            table.insert(player,v.Name)
+            table.insert(ply,v.Name)
         end
     end)
     
@@ -129,8 +152,8 @@ if game.PlaceId == 4954752502 then
                     local Tween2 = TweenService:Create(HumanoidRootPart, TweenInfo.new(10), {CFrame = CFrame.new(-117.977051, 254.000153, 48.1687126, -0.000364676962, 1.55261937e-08, 0.99999994, -7.00774336e-08, 1, -1.55517501e-08, -0.99999994, -7.00831038e-08, -0.000364676962)})
                     local Tween3 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
                     if _G.Toggle == true then
-                    Tween1:Play()
-                    wait(1)
+                        Tween1:Play()
+                        wait(1)
                     end
                     if _G.Toggle == true then
                         Tween2:Play()
@@ -142,7 +165,27 @@ if game.PlaceId == 4954752502 then
             end
         end
 
+    -----Misc-----
+
+    MiscSection:AddButton("Remove Shirt", function()
+        local ply = game.Players.LocalPlayer.Name
+        for i,v in pairs(game:GetService("Workspace"):WaitForChild(ply):GetChildren()) do
+            game:GetService("Workspace"):WaitForChild(ply).Shirt:Destroy()
+            game:GetService("Workspace"):WaitForChild(ply).Pants:Destroy()
+            if v.ClassName == "Accessory" then
+                v:Destroy()
+            end
+        end
+    end)
+
+    MiscSection:AddButton("Safe Mode", function()
+        while wait() do
+            game:GetService("Players").Sensing1234.PlayerGui["Height_Meter_V2"].Players:Destroy()
+        end
+    end)
 end)
+
+    
 
 if game.PlaceId == 6766156863 then
 
