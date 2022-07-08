@@ -1,5 +1,3 @@
-HWID = "HELLO1"
- 
 local Server =  request({
     Url = "https://rainhubrbx.000webhostapp.com/check.php?Key=".. _G.Key .."&HWID="..HWID,
     Method = "GET"
