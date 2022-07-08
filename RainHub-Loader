@@ -235,9 +235,9 @@ end
 end
 
 elseif Server == "Invaid HWID !" then
-    game.Players.LocalPlayer:kick("Invaid HWID")
+    game.Players.LocalPlayer:kick("Hwid ผิด!!!")
 elseif Server == "Invaid Key" then
     game.Players.LocalPlayer:kick("Invaid Key")
 else
-    game.Players.LocalPlayer:kick("Invaid Key")
+    game.Players.LocalPlayer:kick("ไม่มีคีย์ จ้าาาาา")
 end
