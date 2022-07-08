@@ -153,6 +153,7 @@ if game.PlaceId == 4954752502 then
                     local Tween2 = TweenService:Create(HumanoidRootPart, TweenInfo.new(10), {CFrame = CFrame.new(-117.977051, 254.000153, 48.1687126, -0.000364676962, 1.55261937e-08, 0.99999994, -7.00774336e-08, 1, -1.55517501e-08, -0.99999994, -7.00831038e-08, -0.000364676962)})
                     local Tween3 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
                     if _G.Toggle == true then
+                        game:GetService("Workspace")["Fall_Detector"]:Destroy()
                         Tween1:Play()
                         wait(1)
                     end
