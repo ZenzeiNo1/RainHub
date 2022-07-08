@@ -77,7 +77,8 @@ if game.PlaceId == 4954752502 then
         local TweenService = game:GetService("TweenService")
 
         local Tween = TweenService:Create(HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(28.7164764, 233.999954, 2821.16528, -0.940591991, 6.48861231e-08, -0.339539021, 9.06554121e-08, 1, -6.00332442e-08, 0.339539021, -8.7247841e-08, -0.940591991)})
-        local Tween1 = TweenService:Create(HumanoidRootPart,TweenInfo.new(1), {CFrame = CFrame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
+        local Tween1 = TweenService:Create(HumanoidRootPart,TweenInfo.new(1), {CFrame = CF
+        rame.new(-65.4396057, -10.9998627, 47.90028, -0.008724574, 0, -0.999961913, 0, 1, 0, 0.999961913, 0, -0.008724574)})
         Tween1:Play()
         wait(1)
         Tween:Play()
@@ -183,9 +184,11 @@ if game.PlaceId == 4954752502 then
             game:GetService("Players").Sensing1234.PlayerGui["Height_Meter_V2"].Players:Destroy()
         end
     end)
-end)
 
-    
+    MiscSection:AddToggle("Spector",false,function(t)
+        game.Players.LocalPlayer.PlayerGui.SpectateGui.Spectate.Visible = true
+     end)
+end)
 
 if game.PlaceId == 6766156863 then
 
