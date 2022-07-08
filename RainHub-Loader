@@ -185,10 +185,6 @@ if game.PlaceId == 4954752502 then
             game:GetService("Players").Sensing1234.PlayerGui["Height_Meter_V2"].Players:Destroy()
         end
     end)
-
-    MiscSection:AddToggle("Spector",false,function(t)
-        game.Players.LocalPlayer.PlayerGui.SpectateGui.Spectate.Visible = true
-     end)
 end)
 
 if game.PlaceId == 6766156863 then
