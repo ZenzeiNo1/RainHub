@@ -1,5 +1,5 @@
 local Server =  request({
-    Url = "https://rainhubrbx.000webhostapp.com/check.php?Key=".. _G.Key,
+    Url = "https://rainhubrbx.000webhostapp.com/wejnhgiouehjauiehrjbmklrtedfjbhi9opjherhb?Key=".. _G.Key,
     Method = "GET"
 }).Body
  
@@ -235,7 +235,7 @@ end
 elseif Server == "Invaid HWID !" then
     game.Players.LocalPlayer:kick("Hwid ผิด!!!")
 elseif Server == "Invaid Key" then
-    game.Players.LocalPlayer:kick("Invaid Key")
-else
     game.Players.LocalPlayer:kick("ไม่มีคีย์ จ้าาาาา")
+else
+    game.Players.LocalPlayer:kick("มีบางอย่างผิดพลาด")
 end
