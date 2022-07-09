@@ -1,4 +1,4 @@
-local Server =  syn.request({
+local Server =  request({
     Url = "https://rainhubno1.000webhostapp.com/check.php?Key=".. _G.Key,
     Method = "GET"
 }).Body
