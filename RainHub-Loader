@@ -1,4 +1,4 @@
-local Server =  request({
+local Server =  http_request({
     Url = "https://rainhubno1.000webhostapp.com/check.php?Key=".. _G.Key,
     Method = "GET"
 }).Body
