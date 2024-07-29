@@ -1,7 +1,7 @@
 local TweenService = game:GetService("TweenService")
 local ply = game.Players.LocalPlayer.Character.HumanoidRootPart
 
-if game.PlaceID == 13358463560 then
+if game.PlaceId == 13358463560 then
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     local Window = Library.CreateLib("Rain Hub 1.0", "Midnight")
     local Main = Window:NewTab("Main")
