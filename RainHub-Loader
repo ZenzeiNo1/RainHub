@@ -1,4 +1,215 @@
 local TweenService = game:GetService("TweenService")
+local ply = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+if game.PlaceID == 13358463560 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Rain Hub 1.0", "Midnight")
+    local Main = Window:NewTab("Main")
+    local Credit = Window:NewTab("Credit")
+    local Auto = Main:NewSection("Auto Farm")
+    local AutoBut = Main:NewSection("Auto Farm Button")
+    local Credit = Credit:NewSection("Credit")
+    
+    ------ Main ------
+    Auto:NewToggle("Auto Run", "You Can Buy In Fitness", function(state)
+        while true do
+            if state then
+                local Tw1 = TweenService:Create(ply, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1951.23682, 4.05000067, -1642.04651, -0.999084294, -5.82323842e-08, 0.0427854843, -5.69893643e-08, 1, 3.02720728e-08, -0.0427854843, 2.7806033e-08, -0.999084294)})
+                local Tw2 = TweenService:Create(ply, TweenInfo.new(2.75, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1949.63696, 3.99999952, -1490.46936, -0.999939144, 1.81944575e-08, -0.0110329613, 1.92144203e-08, 1, -9.23408834e-08, 0.0110329613, -9.25472534e-08, -0.999939144)})
+                local Tw3 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1879.14185, 3.99999905, -1483.38855, -0.0485947765, -3.95604154e-08, -0.998818576, 1.13462848e-08, 1, -4.01592288e-08, 0.998818576, -1.32844091e-08, -0.0485947765)})
+                local Tw4 = TweenService:Create(ply, TweenInfo.new(4.75, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1828.61963, 3.99999905, -1306.72192, -0.0908902436, -9.18452301e-08, -0.995860934, -3.47439446e-08, 1, -8.90559591e-08, 0.995860934, 2.65058198e-08, -0.0908902436)})
+                local Tw5 = TweenService:Create(ply, TweenInfo.new(1.75, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1691.01648, 4, -1321.73657, 0.9997859, -1.01812539e-07, 0.0206906721, 1.01923725e-07, 1, -4.31927516e-09, -0.0206906721, 6.42722098e-09, 0.9997859)})
+                local Tw6 = TweenService:Create(ply, TweenInfo.new(2.75, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1701.59924, 3.99999952, -1490.94641, 0.993309855, 4.66140975e-08, 0.115479648, -3.59092489e-08, 1, -9.47793879e-08, -0.115479648, 8.99985153e-08, 0.993309855)})
+                local Tw7 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1701.83521, 3.99999905, -1555.25659, -0.0144577483, 8.42557171e-08, 0.999895453, -3.3463305e-08, 1, -8.4748379e-08, -0.999895453, -3.46850761e-08, -0.0144577483)})
+                local Tw8 = TweenService:Create(ply, TweenInfo.new(2.75, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1876.77637, 3.99999905, -1557.67273, 0.999782801, 1.78105388e-08, 0.0208400264, -1.67651795e-08, 1, -5.03358777e-08, -0.0208400264, 4.99755579e-08, 0.999782801)})
+                local Tw9 = TweenService:Create(ply, TweenInfo.new(2.75, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1880.95715, 3.99999905, -1730.52319, 0.126060918, -2.25942709e-09, 0.992022514, 1.06375875e-09, 1, 2.1424198e-09, -0.992022514, 7.85197185e-10, 0.126060918)})
+                local Tw10 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1953.18079, 4.05000067, -1727.79822, -0.998464108, 2.40192772e-08, -0.055402182, 2.48190268e-08, 1, -1.37472869e-08, 0.055402182, -1.51012003e-08, -0.998464108)})
+                Tw1:Play()
+                wait(10)
+                Tw2:Play()
+                wait(2.75)
+                Tw3:Play()
+                wait(1)
+                Tw4:Play()
+                wait(4.75)
+                Tw5:Play()
+                wait(1.75)
+                Tw6:Play()
+                wait(2.75)
+                Tw7:Play()
+                wait(1)
+                Tw8:Play()
+                wait(2.75)
+                Tw9:Play()
+                wait(2.75)
+                Tw10:Play()
+            end
+        end
+    end)
+    
+    Auto:NewToggle("Auto Clean", "Auto Clicker", function(state)
+        while true do
+            if state then
+                local args = {
+                    [1] = "Job"
+                }
+                game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
+                local Tw1 = TweenService:Create(ply, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1715.58521, 4.12662554, -1586.85852, -0.0413668677, -3.96679596e-08, -0.999144018, -5.47444436e-08, 1, -3.74353988e-08, 0.999144018, 5.31489981e-08, -0.0413668677)})
+                local Tw2 = TweenService:Create(ply, TweenInfo.new(0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1720.72473, 4.12662458, -1593.4071, -0.100228146, -1.78955464e-08, -0.99496448, 7.48486926e-08, 1, -2.55260293e-08, 0.99496448, -7.70302151e-08, -0.100228146)})
+                local Tw3 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1716.89111, 4.12662745, -1608.74658, -0.00232439279, -3.48897018e-08, -0.999997318, 9.10893121e-08, 1, -3.51015252e-08, 0.999997318, -9.1170655e-08, -0.00232439279)})
+                local Tw4 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1731.56824, 4.12662172, -1624.4646, -0.27096352, -7.4981358e-08, -0.962589622, -5.64646747e-08, 1, -6.20009715e-08, 0.962589622, 3.75523115e-08, -0.27096352)})
+                local Tw5 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1742.65161, 4.12662888, -1604.37207, -0.00857968535, -9.46922629e-09, -0.999963164, -5.14645837e-09, 1, -9.42541778e-09, 0.999963164, 5.06540188e-09, -0.00857968535)})
+                local Tw6 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1762.04443, 4.12663412, -1595.16418, -0.129098654, 5.65224241e-08, -0.991631746, 4.83307403e-08, 1, 5.0707321e-08, 0.991631746, -4.13800514e-08, -0.129098654)})
+                local Tw7 = TweenService:Create(ply, TweenInfo.new(0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1758.63147, 4.12663412, -1576.76929, -0.0565072373, -1.52712865e-08, -0.998402178, 1.1656681e-08, 1, -1.59554663e-08, 0.998402178, -1.25396546e-08, -0.0565072373)})
+                local Tw8 = TweenService:Create(ply, TweenInfo.new(0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1739.92322, 4.12663078, -1585.7323, 0.211679071, -2.5104832e-08, -0.977339208, 5.50662307e-08, 1, -1.37602827e-08, 0.977339208, -5.09056228e-08, 0.211679071)})
+                local Tw9 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1727.11743, 4.12663126, -1576.79944, -0.0586111471, -6.83849777e-08, -0.998280883, -7.12253723e-08, 1, -6.43209503e-08, 0.998280883, 6.73330049e-08, -0.0586111471)})
+                Tw1:Play()
+                wait(14)
+                Tw2:Play()
+                wait(5)
+                Tw3:Play()
+                wait(5)
+                Tw4:Play()
+                wait(5)
+                Tw5:Play()
+                wait(5)
+                Tw6:Play()
+                wait(5)
+                Tw7:Play()
+                wait(5)
+                Tw8:Play()
+                wait(5)
+                Tw9:Play()
+                local args = {
+                    [1] = "CancelJob"
+                }
+                
+                game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
+            end
+        end
+    end)
+    
+    Auto:NewToggle("Auto Delivery", "Enjoy!!", function(state)
+        while true do
+            if state then
+                local args = {
+                    [1] = "Job"
+                }
+                game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
+                local Tw1 = TweenService:Create(ply, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1709.2572, 4.05218554, -1573.61023, -0.801387548, 5.05635356e-08, -0.598145485, 2.53255372e-08, 1, 5.06030169e-08, 0.598145485, 2.54042707e-08, -0.801387548)})
+                local Tw2 = TweenService:Create(ply, TweenInfo.new(7.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1428.85095, 3.99999905, -1414.49316, 0.0230026804, -7.12068058e-08, 0.999735415, 1.95005989e-09, 1, 7.11807786e-08, -0.999735415, 3.1219527e-10, 0.0230026804)})
+                local Tw3 = TweenService:Create(ply, TweenInfo.new(4, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1266.38818, 4, -1490.72571, 0.956693292, -6.76176839e-08, -0.29109785, 4.36354561e-08, 1, -8.88771012e-08, 0.29109785, 7.2325939e-08, 0.956693292)})
+                local Tw4 = TweenService:Create(ply, TweenInfo.new(13, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1956.29285, 4.05000067, -1648.20532, 0.0304275695, -1.08180709e-09, 0.999536991, 9.74812586e-09, 1, 7.85559062e-10, -0.999536991, 9.71970948e-09, 0.0304275695)})
+                Tw1:Play()
+                wait(10)
+                Tw2:Play()
+                wait(7.5)
+                Tw3:Play()
+                wait(4)
+                Tw4:Play()
+                local args = {
+                    [1] = "CancelJob"
+                }
+                
+                game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
+            end
+        end
+    end)
+    
+    AutoBut:NewButton("Auto Run", "You Can Buy In Fitness", function()
+        local Tw1 = TweenService:Create(ply, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1951.23682, 4.05000067, -1642.04651, -0.999084294, -5.82323842e-08, 0.0427854843, -5.69893643e-08, 1, 3.02720728e-08, -0.0427854843, 2.7806033e-08, -0.999084294)})
+        local Tw2 = TweenService:Create(ply, TweenInfo.new(2.75, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1949.63696, 3.99999952, -1490.46936, -0.999939144, 1.81944575e-08, -0.0110329613, 1.92144203e-08, 1, -9.23408834e-08, 0.0110329613, -9.25472534e-08, -0.999939144)})
+        local Tw3 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1879.14185, 3.99999905, -1483.38855, -0.0485947765, -3.95604154e-08, -0.998818576, 1.13462848e-08, 1, -4.01592288e-08, 0.998818576, -1.32844091e-08, -0.0485947765)})
+        local Tw4 = TweenService:Create(ply, TweenInfo.new(4.75, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1828.61963, 3.99999905, -1306.72192, -0.0908902436, -9.18452301e-08, -0.995860934, -3.47439446e-08, 1, -8.90559591e-08, 0.995860934, 2.65058198e-08, -0.0908902436)})
+        local Tw5 = TweenService:Create(ply, TweenInfo.new(1.75, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1691.01648, 4, -1321.73657, 0.9997859, -1.01812539e-07, 0.0206906721, 1.01923725e-07, 1, -4.31927516e-09, -0.0206906721, 6.42722098e-09, 0.9997859)})
+        local Tw6 = TweenService:Create(ply, TweenInfo.new(2.75, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1701.59924, 3.99999952, -1490.94641, 0.993309855, 4.66140975e-08, 0.115479648, -3.59092489e-08, 1, -9.47793879e-08, -0.115479648, 8.99985153e-08, 0.993309855)})
+        local Tw7 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1701.83521, 3.99999905, -1555.25659, -0.0144577483, 8.42557171e-08, 0.999895453, -3.3463305e-08, 1, -8.4748379e-08, -0.999895453, -3.46850761e-08, -0.0144577483)})
+        local Tw8 = TweenService:Create(ply, TweenInfo.new(2.75, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1876.77637, 3.99999905, -1557.67273, 0.999782801, 1.78105388e-08, 0.0208400264, -1.67651795e-08, 1, -5.03358777e-08, -0.0208400264, 4.99755579e-08, 0.999782801)})
+        local Tw9 = TweenService:Create(ply, TweenInfo.new(2.75, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1880.95715, 3.99999905, -1730.52319, 0.126060918, -2.25942709e-09, 0.992022514, 1.06375875e-09, 1, 2.1424198e-09, -0.992022514, 7.85197185e-10, 0.126060918)})
+        local Tw10 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1953.18079, 4.05000067, -1727.79822, -0.998464108, 2.40192772e-08, -0.055402182, 2.48190268e-08, 1, -1.37472869e-08, 0.055402182, -1.51012003e-08, -0.998464108)})
+        Tw1:Play()
+        wait(10)
+        Tw2:Play()
+        wait(2.75)
+        Tw3:Play()
+        wait(1)
+        Tw4:Play()
+        wait(4.75)
+        Tw5:Play()
+        wait(1.75)
+        Tw6:Play()
+        wait(2.75)
+        Tw7:Play()
+        wait(1)
+        Tw8:Play()
+        wait(2.75)
+        Tw9:Play()
+        wait(2.75)
+        Tw10:Play()
+    end)
+    
+    AutoBut:NewButton("Auto Clean", "Not Auto Clicker", function()
+        local args = {
+            [1] = "Job"
+        }
+        game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
+        local Tw1 = TweenService:Create(ply, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1715.58521, 4.12662554, -1586.85852, -0.0413668677, -3.96679596e-08, -0.999144018, -5.47444436e-08, 1, -3.74353988e-08, 0.999144018, 5.31489981e-08, -0.0413668677)})
+        local Tw2 = TweenService:Create(ply, TweenInfo.new(0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1720.72473, 4.12662458, -1593.4071, -0.100228146, -1.78955464e-08, -0.99496448, 7.48486926e-08, 1, -2.55260293e-08, 0.99496448, -7.70302151e-08, -0.100228146)})
+        local Tw3 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1716.89111, 4.12662745, -1608.74658, -0.00232439279, -3.48897018e-08, -0.999997318, 9.10893121e-08, 1, -3.51015252e-08, 0.999997318, -9.1170655e-08, -0.00232439279)})
+        local Tw4 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1731.56824, 4.12662172, -1624.4646, -0.27096352, -7.4981358e-08, -0.962589622, -5.64646747e-08, 1, -6.20009715e-08, 0.962589622, 3.75523115e-08, -0.27096352)})
+        local Tw5 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1742.65161, 4.12662888, -1604.37207, -0.00857968535, -9.46922629e-09, -0.999963164, -5.14645837e-09, 1, -9.42541778e-09, 0.999963164, 5.06540188e-09, -0.00857968535)})
+        local Tw6 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1762.04443, 4.12663412, -1595.16418, -0.129098654, 5.65224241e-08, -0.991631746, 4.83307403e-08, 1, 5.0707321e-08, 0.991631746, -4.13800514e-08, -0.129098654)})
+        local Tw7 = TweenService:Create(ply, TweenInfo.new(0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1758.63147, 4.12663412, -1576.76929, -0.0565072373, -1.52712865e-08, -0.998402178, 1.1656681e-08, 1, -1.59554663e-08, 0.998402178, -1.25396546e-08, -0.0565072373)})
+        local Tw8 = TweenService:Create(ply, TweenInfo.new(0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1739.92322, 4.12663078, -1585.7323, 0.211679071, -2.5104832e-08, -0.977339208, 5.50662307e-08, 1, -1.37602827e-08, 0.977339208, -5.09056228e-08, 0.211679071)})
+        local Tw9 = TweenService:Create(ply, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1727.11743, 4.12663126, -1576.79944, -0.0586111471, -6.83849777e-08, -0.998280883, -7.12253723e-08, 1, -6.43209503e-08, 0.998280883, 6.73330049e-08, -0.0586111471)})
+        Tw1:Play()
+        wait(14)
+        Tw2:Play()
+        wait(5)
+        Tw3:Play()
+        wait(5)
+        Tw4:Play()
+        wait(5)
+        Tw5:Play()
+        wait(5)
+        Tw6:Play()
+        wait(5)
+        Tw7:Play()
+        wait(5)
+        Tw8:Play()
+        wait(5)
+        Tw9:Play()
+    end)
+    
+    AutoBut:NewButton("Auto Delivery", "Not Auto Quest", function()
+        local args = {
+            [1] = "Job"
+        }
+        game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
+        local Tw1 = TweenService:Create(ply, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1709.2572, 4.05218554, -1573.61023, -0.801387548, 5.05635356e-08, -0.598145485, 2.53255372e-08, 1, 5.06030169e-08, 0.598145485, 2.54042707e-08, -0.801387548)})
+        local Tw2 = TweenService:Create(ply, TweenInfo.new(7.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1428.85095, 3.99999905, -1414.49316, 0.0230026804, -7.12068058e-08, 0.999735415, 1.95005989e-09, 1, 7.11807786e-08, -0.999735415, 3.1219527e-10, 0.0230026804)})
+        local Tw3 = TweenService:Create(ply, TweenInfo.new(4, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1266.38818, 4, -1490.72571, 0.956693292, -6.76176839e-08, -0.29109785, 4.36354561e-08, 1, -8.88771012e-08, 0.29109785, 7.2325939e-08, 0.956693292)})
+        local Tw4 = TweenService:Create(ply, TweenInfo.new(13, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1956.29285, 4.05000067, -1648.20532, 0.0304275695, -1.08180709e-09, 0.999536991, 9.74812586e-09, 1, 7.85559062e-10, -0.999536991, 9.71970948e-09, 0.0304275695)})
+        Tw1:Play()
+        wait(10)
+        Tw2:Play()
+        wait(7.5)
+        Tw3:Play()
+        wait(4)
+        Tw4:Play()
+        local args = {
+            [1] = "CancelJob"
+        }
+        
+        game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
+    end)
+    
+    
+    ------ Credit ------
+    Credit:NewButton("Youtube", "Subscribe", function()
+        setclipboard("https://www.youtube.com/@ChxwMary")
+    end)
+end
 
 if game.PlaceId == 4954752502 then
     
