@@ -1248,7 +1248,7 @@ function Creator.Disconnect()
 end
 
 Creator.Themes = Themes
-Creator.Theme = Creator.Theme or "Dark"
+Creator.Theme = Creator.Theme or "Midnight"
 
 function Creator.GetThemeProperty(Property)
 	local Theme = Creator.Themes[Creator.Theme]
@@ -6227,7 +6227,7 @@ function Library:CreateWindow(Config)
 		return
 	end
 
-	Library.MinimizeKey = Config.MinimizeKey or Enum.KeyCode.LeftControl
+	Library.MinimizeKey = Config.MinimizeKey or Enum.KeyCode.RightControl
 	Library.UseAcrylic = Config.Acrylic or false
 	Library.Acrylic = Config.Acrylic or false
 	Library.Theme = Config.Theme or "Dark"
@@ -6650,7 +6650,7 @@ local InterfaceManager = {} do
 		Theme = "Dark",
 		Acrylic = true,
 		Transparency = true,
-		MenuKeybind = "LeftControl"
+		MenuKeybind = "RightControl"
 	}
 
 	function InterfaceManager:SetFolder(folder)
