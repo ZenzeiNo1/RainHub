@@ -24,9 +24,6 @@ local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 
 local Mobile = false
-if game:GetService("CoreGui"):FindFirstChild("RH_Menu") then
-	game:GetService("CoreGui"):FindFirstChild("RH_Menu"):Destroy()
-end
 
 if RunService:IsStudio() then
 	Mobile = false
@@ -6267,7 +6264,7 @@ function Library:Destroy()
 			Library.Window.AcrylicPaint.Model:Destroy()
 		end
 		Creator.Disconnect()
-    game:GetService("CoreGui"):FindFirstChild("RH_Toggle"):Destroy()
+    	game:GetService("CoreGui"):FindFirstChild("RH_Toggle"):Destroy()
 		Library.GUI:Destroy()
 	end
 end
