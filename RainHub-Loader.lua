@@ -19,8 +19,6 @@ load:changeBody("Loader Success...")
 wait(.5)
 
 if game.PlaceId == 13358463560 then
-    local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
-    local load = Notification.new("success", "Notification", "Loader Success.", true, 3)
     if game:GetService("CoreGui"):FindFirstChild("RH_Menu") or game:GetService("CoreGui"):FindFirstChild("RH_Toggle") then
         Fluent:ToggleAcrylic(false)
         Fluent:ToggleTransparency(false)
@@ -36,12 +34,11 @@ if game.PlaceId == 13358463560 then
         SubTitle = "by star.nice",
         TabWidth = 160,
         Size = UDim2.fromOffset(580, 460),
-        Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
+        Acrylic = true,
         Theme = "Midnight",
-        MinimizeKey = Enum.KeyCode.RightControl -- Used when theres no MinimizeKeybind
+        MinimizeKey = Enum.KeyCode.RightControl
     })
 
-    --Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
     local Tabs = {
         Main = Window:AddTab({ Title = "Main", Icon = "cloud" }),
         Teleport = Window:AddTab({ Title = "Teleport", Icon = "box" }),
@@ -55,7 +52,8 @@ if game.PlaceId == 13358463560 then
     local AutoFarmAntiTG = Tabs.Main:AddSection("AutoFarm Toggle Anti TP")
     local AutoFarmAntiBT = Tabs.Main:AddSection("AutoFarm Button Anti TP")
     local TP = Tabs.Teleport:AddSection("TP")
-    local TPNPC = Tabs.Teleport:AddSection("TPNPC")
+    local TPNPC = Tabs.Teleport:AddSection("TPNpc/Trainer")
+    local TPNPCAnti = Tabs.Teleport:AddSection("TPNpc - Use Bypass Anti Tp")
     local Addon = Tabs.Misc:AddSection("Addon")
     local Bypass = Tabs.Misc:AddSection("Bypass")
     local Credit = Tabs.Cr:AddSection("Credit")
@@ -226,54 +224,47 @@ if game.PlaceId == 13358463560 then
 
             while _G.Run do wait(1)
                 CT:Disable()
-                if not LocalPlayer.Backpack:FindFirstChild("Roadwork Training") then
-                    local TwBuy = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-2057.35522, 8.375, -1643.90527, 0.00399909355, -2.54845585e-08, 0.999992013, -2.04004813e-09, 1, 2.54929198e-08, -0.999992013, -2.14198037e-09, 0.00399909355)})
-                    TwBuy:Play()
-                else
-                    local Tw1 = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1951.23682, 4.05000067, -1642.04651, -0.999084294, -5.82323842e-08, 0.0427854843, -5.69893643e-08, 1, 3.02720728e-08, -0.0427854843, 2.7806033e-08, -0.999084294)})
-                    Tw1:Play()
-                    wait(10)
-                end
-                for i,v in pairs(game.workspace.Purchases.GYM:GetChildren()) do
+                local Tw1 = TweenService:Create(HumanoidRootPart, TweenInfo.new(7, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.GYM:FindFirstChild(1).CFrame})
+                local Tw2 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.GYM:FindFirstChild(2).CFrame})
+                local Tw3 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.GYM:FindFirstChild(3).CFrame})
+                local Tw4 = TweenService:Create(HumanoidRootPart, TweenInfo.new(7, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.GYM:FindFirstChild(4).CFrame})
+                local Tw5 = TweenService:Create(HumanoidRootPart, TweenInfo.new(4, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.GYM:FindFirstChild(5).CFrame})
+                local Tw6 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.GYM:FindFirstChild(6).CFrame})
+                local Tw7 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.GYM:FindFirstChild(7).CFrame})
+                local Tw8 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.GYM:FindFirstChild(8).CFrame})
+                local Tw9 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.GYM:FindFirstChild(9).CFrame})
+                local Tw10 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.GYM:FindFirstChild(10).CFrame})
+                local TwBuy = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-2057.35474, 8.37499809, -1643.64722, -0.000155350775, 6.22260359e-08, 1, 6.39641016e-08, 1, -6.22161025e-08, -1, 6.39544382e-08, -0.000155350775)})
+                TwBuy:Play()
+                wait(10)
+                for i,v in pairs(game.Workspace.MapMisc.Purchases.GYM:GetChildren()) do
                     if v.Name == "Roadwork Training" then
                         fireclickdetector(v.ClickDetector)
                     end
                 end
                 equipitem("Roadwork Training")
                 VirtualUser:Button1Down(Vector2.new(981, 488))
-                if game.Workspace.Roadworks.GYM["1"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["2"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["3"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["4"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["5"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["6"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["7"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["8"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["9"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["10"]:FindFirstChild("TouchInterest")then
-                    local Tw1 = TweenService:Create(HumanoidRootPart, TweenInfo.new(7, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1951.23682, 4.05000067, -1642.04651, -0.999084294, -5.82323842e-08, 0.0427854843, -5.69893643e-08, 1, 3.02720728e-08, -0.0427854843, 2.7806033e-08, -0.999084294)})
-                    local Tw2 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1949.63696, 3.99999952, -1490.46936, -0.999939144, 1.81944575e-08, -0.0110329613, 1.92144203e-08, 1, -9.23408834e-08, 0.0110329613, -9.25472534e-08, -0.999939144)})
-                    local Tw3 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1879.14185, 3.99999905, -1483.38855, -0.0485947765, -3.95604154e-08, -0.998818576, 1.13462848e-08, 1, -4.01592288e-08, 0.998818576, -1.32844091e-08, -0.0485947765)})
-                    local Tw4 = TweenService:Create(HumanoidRootPart, TweenInfo.new(7, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1828.61963, 3.99999905, -1306.72192, -0.0908902436, -9.18452301e-08, -0.995860934, -3.47439446e-08, 1, -8.90559591e-08, 0.995860934, 2.65058198e-08, -0.0908902436)})
-                    local Tw5 = TweenService:Create(HumanoidRootPart, TweenInfo.new(4, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1691.01648, 4, -1321.73657, 0.9997859, -1.01812539e-07, 0.0206906721, 1.01923725e-07, 1, -4.31927516e-09, -0.0206906721, 6.42722098e-09, 0.9997859)})
-                    local Tw6 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1701.59924, 3.99999952, -1490.94641, 0.993309855, 4.66140975e-08, 0.115479648, -3.59092489e-08, 1, -9.47793879e-08, -0.115479648, 8.99985153e-08, 0.993309855)})
-                    local Tw7 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1701.83521, 3.99999905, -1555.25659, -0.0144577483, 8.42557171e-08, 0.999895453, -3.3463305e-08, 1, -8.4748379e-08, -0.999895453, -3.46850761e-08, -0.0144577483)})
-                    local Tw8 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1876.77637, 3.99999905, -1557.67273, 0.999782801, 1.78105388e-08, 0.0208400264, -1.67651795e-08, 1, -5.03358777e-08, -0.0208400264, 4.99755579e-08, 0.999782801)})
-                    local Tw9 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1880.95715, 3.99999905, -1730.52319, 0.126060918, -2.25942709e-09, 0.992022514, 1.06375875e-09, 1, 2.1424198e-09, -0.992022514, 7.85197185e-10, 0.126060918)})
-                    local Tw10 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1953.18079, 4.05000067, -1727.79822, -0.998464108, 2.40192772e-08, -0.055402182, 2.48190268e-08, 1, -1.37472869e-08, 0.055402182, -1.51012003e-08, -0.998464108)})
-                    Tw1:Play()
-                    wait(7)
-                    Tw2:Play()
-                    wait(5)
-                    Tw3:Play()
-                    wait(4)
-                    Tw4:Play()
-                    wait(7)
-                    Tw5:Play()
-                    wait(4)
-                    Tw6:Play()
-                    wait(3)
-                    Tw7:Play()
-                    wait(3)
-                    Tw8:Play()
-                    wait(5)
-                    Tw9:Play()
-                    wait(5)
-                    Tw10:Play()
-                    wait(5)
-                    CT:Enable()
-                end
+                Tw1:Play()
+                wait(7)
+                Tw2:Play()
+                wait(5)
+                Tw3:Play()
+                wait(4)
+                Tw4:Play()
+                wait(7)
+                Tw5:Play()
+                wait(4)
+                Tw6:Play()
+                wait(3)
+                Tw7:Play()
+                wait(3)
+                Tw8:Play()
+                wait(5)
+                Tw9:Play()
+                wait(5)
+                Tw10:Play()
+                wait(5)
+                CT:Enable()
             end
         end
         })
@@ -286,20 +277,19 @@ if game.PlaceId == 13358463560 then
             Callback = function(v)
             _G.AutoSenkaimon = v
             while _G.AutoSenkaimon do wait(1)
-                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(5839.04199, -20.5, 2848.83813, 0.99961549, -8.25480768e-08, 0.027729148, 8.40106011e-08, 1, -5.15781835e-08, -0.027729148, 5.38878915e-08, 0.99961549)})
-                local Tw2 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(5839.2168, -20.5000038, 2831.2583, 0.999796629, 5.35951408e-08, 0.0201668292, -5.29640936e-08, 1, -3.18254401e-08, -0.0201668292, 3.07508472e-08, 0.999796629)})
-                local Tw3 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(5675.73438, -20.5, 2748.9751, -0.0195927639, 3.10148494e-08, 0.999808073, 8.14329049e-09, 1, -3.08612229e-08, -0.999808073, 7.53707052e-09, -0.0195927639)})
-                local Tw4 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(5547.59619, -20.5000076, 2851.90796, -0.999341369, -1.55441859e-09, 0.0362889357, -3.6423029e-09, 1, -5.74689025e-08, -0.0362889357, -5.75632235e-08, -0.999341369)})
-                local Tw5 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(5562.21631, -20.5000076, 3029.85229, -0.999971688, 1.23424826e-07, 0.00752679165, 1.23642096e-07, 1, 2.84006791e-08, -0.00752679165, 2.93305025e-08, -0.999971688)})
-                local Tw6 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(5671.38916, -20.5000038, 3036.0481, -0.00743863313, 1.04424416e-07, -0.999972343, -1.05891944e-08, 1, 1.04506078e-07, 0.999972343, 1.13662839e-08, -0.00743863313)})
-                local Tw7 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(5733.354, -20.5000076, 3197.0957, 0.0876132846, -7.39989403e-08, -0.996154547, 8.07849645e-08, 1, -6.71794353e-08, 0.996154547, -7.4588506e-08, 0.0876132846)})
-                local Tw8 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(5849.46729, -20.5, 3099.12891, 0.999937057, 3.79951466e-08, 0.0112192826, -3.82133578e-08, 1, 1.92354488e-08, -0.0112192826, -1.96629646e-08, 0.999937057)})
-                local Tw9 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(5870.48682, -20.5000038, 2987.37061, 0.999846458, -2.2171708e-08, 0.0175229646, 2.17854819e-08, 1, 2.22320082e-08, -0.0175229646, -2.18468497e-08, 0.999846458)})
-                local Tw10 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(5995.54834, -20.5000038, 2892.17383, 0.998578906, -1.31785676e-08, 0.0532930307, 9.1707264e-09, 1, 7.54483978e-08, -0.0532930307, -7.48524442e-08, 0.998578906)})
-                local Tw11 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(5839.2168, -20.5000038, 2831.2583, 0.999796629, 5.35951408e-08, 0.0201668292, -5.29640936e-08, 1, -3.18254401e-08, -0.0201668292, 3.07508472e-08, 0.999796629)})
-                Tw:Play()
+                local TwBuy = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(4796.24902, -414.92511, 2849.2915, 0.999910474, -2.46492675e-08, 0.0133817066, 2.48082461e-08, 1, -1.17143095e-08, -0.0133817066, 1.20452377e-08, 0.999910474)})
+                local Tw2 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(1).CFrame})
+                local Tw3 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(2).CFrame})
+                local Tw4 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(3).CFrame})
+                local Tw5 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(4).CFrame})
+                local Tw6 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(5).CFrame})
+                local Tw7 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(6).CFrame})
+                local Tw8 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(7).CFrame})
+                local Tw9 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(8).CFrame})
+                local Tw10 = TweenService:Create(HumanoidRootPart, TweenInfo.new(3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(9).CFrame})
+                TwBuy:Play()
                 wait(3)
-                for i,v in pairs(game.workspace.Purchases.GYM:GetChildren()) do
+                for i,v in pairs(game.Workspace.MapMisc.Purchases.GYM:GetChildren()) do
                     if v.Name == "Roadwork Training" then
                         fireclickdetector(v.ClickDetector)
                     end
@@ -307,7 +297,7 @@ if game.PlaceId == 13358463560 then
                 equipitem("Roadwork Training")
                 VirtualUser:Button1Down(Vector2.new(981, 488))
                 wait(5)
-                Tw:Play()
+                Tw1:Play()
                 wait(3)
                 Tw2:Play()
                 wait(4)
@@ -325,10 +315,7 @@ if game.PlaceId == 13358463560 then
                 wait(4)
                 Tw9:Play()
                 wait(4)
-                Tw10:Play()
-                wait(4)
-                Tw11:Play()
-                wait(3)
+                Tw1:Play()
                 Notification.new("success", "Notification", "Success!!!", true , 3)
             end
         end
@@ -713,36 +700,34 @@ if game.PlaceId == 13358463560 then
                 else
                     HumanoidRootPart.CFrame = CFrame.new(-1951.23682, 4.05000067, -1642.04651, -0.999084294, -5.82323842e-08, 0.0427854843, -5.69893643e-08, 1, 3.02720728e-08, -0.0427854843, 2.7806033e-08, -0.999084294)
                 end
-                for i,v in pairs(game.workspace.Purchases.GYM:GetChildren()) do
+                for i,v in pairs(game.Workspace.MapMisc.Purchases.GYM:GetChildren()) do
                     if v.Name == "Roadwork Training" then
                         fireclickdetector(v.ClickDetector)
                     end
                 end
                 equipitem("Roadwork Training")
                 VirtualUser:Button1Down(Vector2.new(981, 488))
-                if game.Workspace.Roadworks.GYM["1"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["2"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["3"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["4"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["5"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["6"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["7"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["8"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["9"]:FindFirstChild("TouchInterest") or game.Workspace.Roadworks.GYM["10"]:FindFirstChild("TouchInterest")then
-                    HumanoidRootPart.CFrame = CFrame.new(-1951.23682, 4.05000067, -1642.04651, -0.999084294, -5.82323842e-08, 0.0427854843, -5.69893643e-08, 1, 3.02720728e-08, -0.0427854843, 2.7806033e-08, -0.999084294)
-                    wait(2)
-                    HumanoidRootPart.CFrame = CFrame.new(-1949.63696, 3.99999952, -1490.46936, -0.999939144, 1.81944575e-08, -0.0110329613, 1.92144203e-08, 1, -9.23408834e-08, 0.0110329613, -9.25472534e-08, -0.999939144)
-                    wait(2)
-                    HumanoidRootPart.CFrame = CFrame.new(-1879.14185, 3.99999905, -1483.38855, -0.0485947765, -3.95604154e-08, -0.998818576, 1.13462848e-08, 1, -4.01592288e-08, 0.998818576, -1.32844091e-08, -0.0485947765)
-                    wait(2)
-                    HumanoidRootPart.CFrame = CFrame.new(-1828.61963, 3.99999905, -1306.72192, -0.0908902436, -9.18452301e-08, -0.995860934, -3.47439446e-08, 1, -8.90559591e-08, 0.995860934, 2.65058198e-08, -0.0908902436)
-                    wait(2)
-                    HumanoidRootPart.CFrame = CFrame.new(-1691.01648, 4, -1321.73657, 0.9997859, -1.01812539e-07, 0.0206906721, 1.01923725e-07, 1, -4.31927516e-09, -0.0206906721, 6.42722098e-09, 0.9997859)
-                    wait(2)
-                    HumanoidRootPart.CFrame = CFrame.new(-1701.59924, 3.99999952, -1490.94641, 0.993309855, 4.66140975e-08, 0.115479648, -3.59092489e-08, 1, -9.47793879e-08, -0.115479648, 8.99985153e-08, 0.993309855)
-                    wait(2)
-                    HumanoidRootPart.CFrame = CFrame.new(-1701.83521, 3.99999905, -1555.25659, -0.0144577483, 8.42557171e-08, 0.999895453, -3.3463305e-08, 1, -8.4748379e-08, -0.999895453, -3.46850761e-08, -0.0144577483)
-                    wait(2)
-                    HumanoidRootPart.CFrame = CFrame.new(-1876.77637, 3.99999905, -1557.67273, 0.999782801, 1.78105388e-08, 0.0208400264, -1.67651795e-08, 1, -5.03358777e-08, -0.0208400264, 4.99755579e-08, 0.999782801)
-                    wait(2)
-                    HumanoidRootPart.CFrame = CFrame.new(-1880.95715, 3.99999905, -1730.52319, 0.126060918, -2.25942709e-09, 0.992022514, 1.06375875e-09, 1, 2.1424198e-09, -0.992022514, 7.85197185e-10, 0.126060918)
-                    wait(2)
-                    HumanoidRootPart.CFrame = CFrame.new(-1953.18079, 4.05000067, -1727.79822, -0.998464108, 2.40192772e-08, -0.055402182, 2.48190268e-08, 1, -1.37472869e-08, 0.055402182, -1.51012003e-08, -0.998464108)
-                    wait(2)
-                    CT:Enable()
-                end
+                HumanoidRootPart.CFrame = CFrame.new(-1951.23682, 4.05000067, -1642.04651, -0.999084294, -5.82323842e-08, 0.0427854843, -5.69893643e-08, 1, 3.02720728e-08, -0.0427854843, 2.7806033e-08, -0.999084294)
+                wait(2)
+                HumanoidRootPart.CFrame = CFrame.new(-1949.63696, 3.99999952, -1490.46936, -0.999939144, 1.81944575e-08, -0.0110329613, 1.92144203e-08, 1, -9.23408834e-08, 0.0110329613, -9.25472534e-08, -0.999939144)
+                wait(2)
+                HumanoidRootPart.CFrame = CFrame.new(-1879.14185, 3.99999905, -1483.38855, -0.0485947765, -3.95604154e-08, -0.998818576, 1.13462848e-08, 1, -4.01592288e-08, 0.998818576, -1.32844091e-08, -0.0485947765)
+                wait(2)
+                HumanoidRootPart.CFrame = CFrame.new(-1828.61963, 3.99999905, -1306.72192, -0.0908902436, -9.18452301e-08, -0.995860934, -3.47439446e-08, 1, -8.90559591e-08, 0.995860934, 2.65058198e-08, -0.0908902436)
+                wait(2)
+                HumanoidRootPart.CFrame = CFrame.new(-1691.01648, 4, -1321.73657, 0.9997859, -1.01812539e-07, 0.0206906721, 1.01923725e-07, 1, -4.31927516e-09, -0.0206906721, 6.42722098e-09, 0.9997859)
+                wait(2)
+                HumanoidRootPart.CFrame = CFrame.new(-1701.59924, 3.99999952, -1490.94641, 0.993309855, 4.66140975e-08, 0.115479648, -3.59092489e-08, 1, -9.47793879e-08, -0.115479648, 8.99985153e-08, 0.993309855)
+                wait(2)
+                HumanoidRootPart.CFrame = CFrame.new(-1701.83521, 3.99999905, -1555.25659, -0.0144577483, 8.42557171e-08, 0.999895453, -3.3463305e-08, 1, -8.4748379e-08, -0.999895453, -3.46850761e-08, -0.0144577483)
+                wait(2)
+                HumanoidRootPart.CFrame = CFrame.new(-1876.77637, 3.99999905, -1557.67273, 0.999782801, 1.78105388e-08, 0.0208400264, -1.67651795e-08, 1, -5.03358777e-08, -0.0208400264, 4.99755579e-08, 0.999782801)
+                wait(2)
+                HumanoidRootPart.CFrame = CFrame.new(-1880.95715, 3.99999905, -1730.52319, 0.126060918, -2.25942709e-09, 0.992022514, 1.06375875e-09, 1, 2.1424198e-09, -0.992022514, 7.85197185e-10, 0.126060918)
+                wait(2)
+                HumanoidRootPart.CFrame = CFrame.new(-1953.18079, 4.05000067, -1727.79822, -0.998464108, 2.40192772e-08, -0.055402182, 2.48190268e-08, 1, -1.37472869e-08, 0.055402182, -1.51012003e-08, -0.998464108)
+                wait(2)
+                CT:Enable()
             end
         end
         })
@@ -755,9 +740,9 @@ if game.PlaceId == 13358463560 then
             Callback = function(v)
             _G.AutoSenkaimon = v
             while _G.AutoSenkaimon do wait(1)
-                HumanoidRootPart.CFrame = CFrame.new(5839.04199, -20.5, 2848.83813, 0.99961549, -8.25480768e-08, 0.027729148, 8.40106011e-08, 1, -5.15781835e-08, -0.027729148, 5.38878915e-08, 0.99961549)
+                HumanoidRootPart.CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(1).CFrame
                 wait(2)
-                for i,v in pairs(game.workspace.Purchases.GYM:GetChildren()) do
+                for i,v in pairs(game.Workspace.MapMisc.Purchases.GYM:GetChildren()) do
                     if v.Name == "Roadwork Training" then
                         fireclickdetector(v.ClickDetector)
                     end
@@ -765,26 +750,25 @@ if game.PlaceId == 13358463560 then
                 equipitem("Roadwork Training")
                 VirtualUser:Button1Down(Vector2.new(981, 488))
                 wait(5)
-                HumanoidRootPart.CFrame = CFrame.new(5839.2168, -20.5000038, 2831.2583, 0.999796629, 5.35951408e-08, 0.0201668292, -5.29640936e-08, 1, -3.18254401e-08, -0.0201668292, 3.07508472e-08, 0.999796629)
-                wait(2)
-                HumanoidRootPart.CFrame = CFrame.new(5675.73438, -20.5, 2748.9751, -0.0195927639, 3.10148494e-08, 0.999808073, 8.14329049e-09, 1, -3.08612229e-08, -0.999808073, 7.53707052e-09, -0.0195927639)
-                wait(2)
-                HumanoidRootPart.CFrame = CFrame.new(5547.59619, -20.5000076, 2851.90796, -0.999341369, -1.55441859e-09, 0.0362889357, -3.6423029e-09, 1, -5.74689025e-08, -0.0362889357, -5.75632235e-08, -0.999341369)
-                wait(2)
-                HumanoidRootPart.CFrame = CFrame.new(5562.21631, -20.5000076, 3029.85229, -0.999971688, 1.23424826e-07, 0.00752679165, 1.23642096e-07, 1, 2.84006791e-08, -0.00752679165, 2.93305025e-08, -0.999971688)
-                wait(2)
-                HumanoidRootPart.CFrame = CFrame.new(5671.38916, -20.5000038, 3036.0481, -0.00743863313, 1.04424416e-07, -0.999972343, -1.05891944e-08, 1, 1.04506078e-07, 0.999972343, 1.13662839e-08, -0.00743863313)
-                wait(2)
-                HumanoidRootPart.CFrame = CFrame.new(5733.354, -20.5000076, 3197.0957, 0.0876132846, -7.39989403e-08, -0.996154547, 8.07849645e-08, 1, -6.71794353e-08, 0.996154547, -7.4588506e-08, 0.0876132846)
-                wait(2)
-                HumanoidRootPart.CFrame = CFrame.new(5849.46729, -20.5, 3099.12891, 0.999937057, 3.79951466e-08, 0.0112192826, -3.82133578e-08, 1, 1.92354488e-08, -0.0112192826, -1.96629646e-08, 0.999937057)
-                wait(2)
-                HumanoidRootPart.CFrame = CFrame.new(5870.48682, -20.5000038, 2987.37061, 0.999846458, -2.2171708e-08, 0.0175229646, 2.17854819e-08, 1, 2.22320082e-08, -0.0175229646, -2.18468497e-08, 0.999846458)
-                wait(2)
-                HumanoidRootPart.CFrame = CFrame.new(5995.54834, -20.5000038, 2892.17383, 0.998578906, -1.31785676e-08, 0.0532930307, 9.1707264e-09, 1, 7.54483978e-08, -0.0532930307, -7.48524442e-08, 0.998578906)
-                wait(2)
-                HumanoidRootPart.CFrame = CFrame.new(5839.2168, -20.5000038, 2831.2583, 0.999796629, 5.35951408e-08, 0.0201668292, -5.29640936e-08, 1, -3.18254401e-08, -0.0201668292, 3.07508472e-08, 0.999796629)
-                wait(2)
+                HumanoidRootPart.CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(1).CFrame
+                wait(3)
+                HumanoidRootPart.CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(2).CFrame
+                wait(3)
+                HumanoidRootPart.CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(3).CFrame
+                wait(3)
+                HumanoidRootPart.CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(4).CFrame
+                wait(3)
+                HumanoidRootPart.CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(5).CFrame
+                wait(3)
+                HumanoidRootPart.CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(6).CFrame
+                wait(3)
+                HumanoidRootPart.CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(7).CFrame
+                wait(3)
+                HumanoidRootPart.CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(8).CFrame
+                wait(3)
+                HumanoidRootPart.CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(9).CFrame
+                wait(3)
+                HumanoidRootPart.CFrame = game.Workspace.Roadworks.Senkaimon:FindFirstChild(1).CFrame
                 Notification.new("success", "Notification", "Success!!!", true , 3)
             end
         end
@@ -989,7 +973,7 @@ if game.PlaceId == 13358463560 then
 
         TP:AddButton({
             Title = "Senkaimon",
-            Description = "",
+            Description = "You Chat 'senkaimon'",
             Callback = function()
                 local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1747.18213, 4.39999866, -1682.74927, -0.999964416, 8.03205324e-09, 0.00843580998, 7.29318517e-09, 1, -8.76178348e-08, -0.00843580998, -8.75531896e-08, -0.999964416)})
                 Tw:Play()
@@ -1232,12 +1216,348 @@ if game.PlaceId == 13358463560 then
             end
         })
 
-        ----- TeleportNPC -----
+        ----- TeleportTrainer -----
         TPNPC:AddButton({
-            Title = "Hiro Shi",
+            Title = "Boxing",
             Description = "",
             Callback = function()
-                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1558.70154, 4.04999304, -1633.00952, 0.999905825, -8.26474533e-08, -0.0137247611, 8.22380244e-08, 1, -3.03961301e-08, 0.0137247611, 2.92645712e-08, 0.999905825)})
+                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Npcs.Trainers.Boxing.Rig.HumanoidRootPart.CFrame})
+                Tw:Play()
+                local TPN = Notification.new("info", "Notification", "Teleporting.", true , 10)
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                Notification.new("success", "Notification", "Success!!!", true , 3)
+            end
+        })
+        TPNPC:AddButton({
+            Title = "Capoeira",
+            Description = "",
+            Callback = function()
+                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Npcs.Trainers.Capoeira.Rig.HumanoidRootPart.CFrame})
+                Tw:Play()
+                local TPN = Notification.new("info", "Notification", "Teleporting.", true , 10)
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                Notification.new("success", "Notification", "Success!!!", true , 3)
+            end
+        })
+        TPNPC:AddButton({
+            Title = "Karate",
+            Description = "",
+            Callback = function()
+                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Npcs.Trainers.Karate.Rig.HumanoidRootPart.CFrame})
+                Tw:Play()
+                local TPN = Notification.new("info", "Notification", "Teleporting.", true , 10)
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                Notification.new("success", "Notification", "Success!!!", true , 3)
+            end
+        })
+        TPNPC:AddButton({
+            Title = "Kung Fu",
+            Description = "",
+            Callback = function()
+                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Npcs.Trainers["Kung Fu"].Rig.HumanoidRootPart.CFrame})
+                Tw:Play()
+                local TPN = Notification.new("info", "Notification", "Teleporting.", true , 10)
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                Notification.new("success", "Notification", "Success!!!", true , 3)
+            end
+        })
+        TPNPC:AddButton({
+            Title = "Muay Thai",
+            Description = "",
+            Callback = function()
+                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Npcs.Trainers["Muay Thai"].Rig.HumanoidRootPart.CFrame})
+                Tw:Play()
+                local TPN = Notification.new("info", "Notification", "Teleporting.", true , 10)
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                Notification.new("success", "Notification", "Success!!!", true , 3)
+            end
+        })
+        TPNPC:AddButton({
+            Title = "Sumo",
+            Description = "",
+            Callback = function()
+                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Npcs.Trainers.Sumo.Rig.HumanoidRootPart.CFrame})
+                Tw:Play()
+                local TPN = Notification.new("info", "Notification", "Teleporting.", true , 10)
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                Notification.new("success", "Notification", "Success!!!", true , 3)
+            end
+        })
+        TPNPC:AddButton({
+            Title = "Teakwondo",
+            Description = "",
+            Callback = function()
+                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Npcs.Trainers.Taekwondo.Rig.HumanoidRootPart.CFrame})
+                Tw:Play()
+                local TPN = Notification.new("info", "Notification", "Teleporting.", true , 10)
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                wait(.5)
+                TPN:changeBody("Teleporting...")
+                wait(.5)
+                TPN:changeBody("Teleporting.")
+                wait(.5)
+                TPN:changeBody("Teleporting..")
+                Notification.new("success", "Notification", "Success!!!", true , 3)
+            end
+        })
+        TPNPC:AddButton({
+            Title = "Wrestling",
+            Description = "",
+            Callback = function()
+                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = game.Workspace.Npcs.Trainers.Wrestling.Rig.HumanoidRootPart.CFrame})
                 Tw:Play()
                 local TPN = Notification.new("info", "Notification", "Teleporting.", true , 10)
                 wait(.5)
@@ -1282,153 +1602,68 @@ if game.PlaceId == 13358463560 then
             end
         })
 
-        TPNPC:AddButton({
-            Title = "Brekdak",
+        ----- Tp Npc Anti Tp -----
+        TPNPCAnti:AddButton({
+            Title = "Ryu",
             Description = "",
             Callback = function()
-                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1344.87512, -6.69999981, -1409.01636, 0.0146927871, 2.33551151e-10, 0.999892056, -4.84509179e-08, 1, 4.78379503e-10, -0.999892056, -4.84527192e-08, 0.0146927871)})
-                Tw:Play()
-                local TPN = Notification.new("info", "Notification", "Teleporting.", true , 10)
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                Notification.new("success", "Notification", "Success!!!", true , 3)
+                HumanoidRootPart.CFrame = game.Workspace.Npcs["? Ryu"].CFrame
             end
         })
 
-        TPNPC:AddButton({
-            Title = "André Araújo",
+        TPNPCAnti:AddButton({
+            Title = "Coin Tranfer",
             Description = "",
             Callback = function()
-                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1404.70447, 4.3000021, -1723.2074, 0.999947786, -7.88095704e-08, 0.0102168089, 7.87596051e-08, 1, 5.29279554e-09, -0.0102168089, -4.48784743e-09, 0.999947786)})
-                Tw:Play()
-                local TPN = Notification.new("info", "Notification", "Teleporting.", true , 10)
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                Notification.new("success", "Notification", "Success!!!", true , 3)
+                HumanoidRootPart.CFrame = game.Workspace.Npcs["Asura Coin Transfer"].CFrame
+            end
+        })
+        TPNPCAnti:AddButton({
+            Title = "Fortune Teller",
+            Description = "",
+            Callback = function()
+                HumanoidRootPart.CFrame = game.Workspace.Npcs["Fortune Teller"].CFrame
+            end
+        })
+        TPNPCAnti:AddButton({
+            Title = "Master Wu",
+            Description = "",
+            Callback = function()
+                HumanoidRootPart.CFrame = CFrame.new(-2193.87329, -9.75000191, -1132.60388, -0.999948323, -4.81203202e-08, 0.0101665361, -4.92236509e-08, 1, -1.08275493e-07, -0.0101665361, -1.0877033e-07, -0.999948323)
             end
         })
 
-        TPNPC:AddButton({
-            Title = "Kwan Jin-soo",
+        TPNPCAnti:AddButton({
+            Title = "Old Man",
             Description = "",
             Callback = function()
-                local Tw = TweenService:Create(HumanoidRootPart, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1777.24451, 4.05000067, -1586.75757, 0.0149672665, -7.44274331e-08, -0.999888003, 7.90651811e-08, 1, -7.32522452e-08, 0.999888003, -7.79599389e-08, 0.0149672665)})
-                Tw:Play()
-                local TPN = Notification.new("info", "Notification", "Teleporting.", true , 10)
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                wait(.5)
-                TPN:changeBody("Teleporting...")
-                wait(.5)
-                TPN:changeBody("Teleporting.")
-                wait(.5)
-                TPN:changeBody("Teleporting..")
-                Notification.new("success", "Notification", "Success!!!", true , 3)
+                HumanoidRootPart.CFrame = game.Workspace.Npcs["Old Man"].CFrame
             end
         })
 
+        TPNPCAnti:AddButton({
+            Title = "Ryan Kure",
+            Description = "",
+            Callback = function()
+                HumanoidRootPart.CFrame = game.Workspace.Npcs["Ryan Kure"].CFrame
+            end
+        })
+
+        TPNPCAnti:AddButton({
+            Title = "Tattoo Storage",
+            Description = "",
+            Callback = function()
+                HumanoidRootPart.CFrame = game.Workspace.Npcs.TattooStorage.CFrame
+            end
+        })
+
+        TPNPCAnti:AddButton({
+            Title = "Zen Senko",
+            Description = "",
+            Callback = function()
+                HumanoidRootPart.CFrame = game.Workspace.Npcs["Zen Senko"].CFrame
+            end
+        })
         ------ Misc --------
         
         Bypass:AddButton({
@@ -1501,7 +1736,7 @@ if game.PlaceId == 13358463560 then
         Frame.Position = UDim2.new(0.0332326293, 0, 0.103015073, 0)
         Frame.Size = UDim2.new(0.0415407866, 0, 0.0690954775, 0)
 
-        UICorner.CornerRadius = UDim.new(0, 200)
+        UICorner.CornerRadius = UDim.new(0, 20)
         UICorner.Parent = Frame
 
         TextButton.Parent = Frame
@@ -1525,6 +1760,7 @@ if game.PlaceId == 13358463560 then
         UITextSizeConstraint.MaxTextSize = 20
     end
     ToggleUI()
+end
 end
 
 if game.PlaceId == 4954752502 then
