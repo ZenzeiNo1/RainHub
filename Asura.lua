@@ -11,17 +11,17 @@ local CoreGui = game:GetService("CoreGui")
 if game.PlaceId == 13358463560 then
     local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
     local load = Notification.new("success", "Notification", "Loader Success.", true, 3)
-    -- wait(.5)
-    -- load:changeBody("Loader Success..")
-    -- wait(.5)
-    -- load:changeBody("Loader Success...")
-    -- wait(.5)
-    -- load:changeBody("Loader Success.")
-    -- wait(.5)
-    -- load:changeBody("Loader Success..")
-    -- wait(.5)
-    -- load:changeBody("Loader Success...")
-    -- wait(.5)
+    wait(.5)
+    load:changeBody("Loader Success..")
+    wait(.5)
+    load:changeBody("Loader Success...")
+    wait(.5)
+    load:changeBody("Loader Success.")
+    wait(.5)
+    load:changeBody("Loader Success..")
+    wait(.5)
+    load:changeBody("Loader Success...")
+    wait(.5)
     if game:GetService("CoreGui"):FindFirstChild("RH_Menu") or game:GetService("CoreGui"):FindFirstChild("RH_Toggle") then
         Fluent:ToggleAcrylic(false)
         Fluent:ToggleTransparency(false)
@@ -320,45 +320,6 @@ if game.PlaceId == 13358463560 then
                 wait(4)
                 Tw1:Play()
                 Notification.new("success", "Notification", "Success!!!", true , 3)
-            end
-        end
-        })
-
-        local Toggle = AutoFarmTG:AddToggle("Auto Strike Power", 
-        {
-            Title = "Auto Strike Power", 
-            Description = "Fully Auto",
-            Default = false,
-            Callback = function(v)
-            _G.StrikePower = v
-            while _G.StrikePower do wait(1)
-                _G.StrikePowerAt = nil
-                if _G.StrikePower then
-                    _G.StrikePowerAt = true
-                end
-                while _G.StrikePower do wait(30)    
-                    _G.StrikePowerAt = not _G.StrikePowerAt
-                end
-                local Tw1 = TweenService:Create(HumanoidRootPart, TweenInfo.new(15, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-2056.43018, 8.375, -1646.74341, -0.0556021817, -9.18125167e-08, 0.998453021, -4.03500344e-08, 1, 8.97077399e-08, -0.998453021, -3.52996672e-08, -0.0556021817)})
-                local Tw2 = TweenService:Create(HumanoidRootPart, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0), {CFrame = CFrame.new(-1994.89807, 6, -1664.18738, -0.00257649482, 9.15209922e-11, 0.999996662, -4.33683667e-08, 1, -2.03260048e-10, -0.999996662, -4.33687468e-08, -0.00257649482)})
-                Tw1:Play()
-                wait(15)
-                for i,v in pairs(workspace.MapMisc.Purchases.GYM:GetChildren()) do
-                    if v.Name == "Strike Power Training" then
-                        fireclickdetector(v.ClickDetector)
-                        fireclickdetector(v.ClickDetector)
-                        fireclickdetector(v.ClickDetector)
-                    end
-                end
-                wait(5)
-                Tw2:Play()
-                wait(5)
-                equipitem("Strike Power Training")
-                VirtualUser:Button1Down(Vector2.new(981, 488))
-                equipitem("Combat")
-                while _G.StrikePowerAt do wait(0)
-                    VirtualUser:Button1Down(Vector2.new(981, 488))
-                end
             end
         end
         })
@@ -1450,7 +1411,7 @@ if game.PlaceId == 13358463560 then
         Frame.Position = UDim2.new(0.0332326293, 0, 0.103015073, 0)
         Frame.Size = UDim2.new(0.0415407866, 0, 0.0690954775, 0)
 
-        UICorner.CornerRadius = UDim.new(0, 200)
+        UICorner.CornerRadius = UDim.new(0, 20)
         UICorner.Parent = Frame
 
         TextButton.Parent = Frame
