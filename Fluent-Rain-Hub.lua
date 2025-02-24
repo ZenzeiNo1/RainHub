@@ -1363,9 +1363,10 @@ Library.Creator = Creator
 
 local New = Creator.New
 
-local GUI = New("RH_Menu", {
+local GUI = New("ScreenGui", {
 	Parent = RunService:IsStudio() and LocalPlayer.PlayerGui or game:GetService("CoreGui"),
 })
+GUI.Name = "RH_Menu"
 Library.GUI = GUI
 ProtectGui(GUI)
 
