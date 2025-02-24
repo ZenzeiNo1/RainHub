@@ -24,7 +24,9 @@ local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 
 local Mobile = false
-game:GetService("CoreGui"):FindFirstChild("RH_Menu"):Destroy()
+if game:GetService("CoreGui"):FindFirstChild("RH_Menu") then
+	game:GetService("CoreGui"):FindFirstChild("RH_Menu"):Destroy()
+end
 
 if RunService:IsStudio() then
 	Mobile = false
