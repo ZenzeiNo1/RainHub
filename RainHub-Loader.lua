@@ -19,30 +19,8 @@ load:changeBody("Loader Success...")
 wait(.5)
 
 if game.PlaceId == 13358463560 then
-    local TweenService = game:GetService("TweenService")
-local LocalPlayer = game.Players.LocalPlayer
-local Character = LocalPlayer.Character
-local Humanoid = Character.Humanoid
-local HumanoidRootPart = Character.HumanoidRootPart
-local Name = LocalPlayer.Name
-local CT = require(LocalPlayer.PlayerScripts.PlayerModule):GetControls()
-local VirtualUser = game:GetService('VirtualInputManager')
-local CoreGui = game:GetService("CoreGui")
-
-if game.PlaceId == 13358463560 then
     local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
     local load = Notification.new("success", "Notification", "Loader Success.", true, 3)
-    -- wait(.5)
-    -- load:changeBody("Loader Success..")
-    -- wait(.5)
-    -- load:changeBody("Loader Success...")
-    -- wait(.5)
-    -- load:changeBody("Loader Success.")
-    -- wait(.5)
-    -- load:changeBody("Loader Success..")
-    -- wait(.5)
-    -- load:changeBody("Loader Success...")
-    -- wait(.5)
     if game:GetService("CoreGui"):FindFirstChild("RH_Menu") or game:GetService("CoreGui"):FindFirstChild("RH_Toggle") then
         Fluent:ToggleAcrylic(false)
         Fluent:ToggleTransparency(false)
@@ -1547,7 +1525,6 @@ if game.PlaceId == 13358463560 then
         UITextSizeConstraint.MaxTextSize = 20
     end
     ToggleUI()
-end
 end
 
 if game.PlaceId == 4954752502 then
