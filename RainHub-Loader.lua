@@ -19,16 +19,40 @@ load:changeBody("Loader Success...")
 wait(.5)
 
 if game.PlaceId == 13358463560 then
+    local TweenService = game:GetService("TweenService")
+local LocalPlayer = game.Players.LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character.Humanoid
+local HumanoidRootPart = Character.HumanoidRootPart
+local Name = LocalPlayer.Name
+local CT = require(LocalPlayer.PlayerScripts.PlayerModule):GetControls()
+local VirtualUser = game:GetService('VirtualInputManager')
+local CoreGui = game:GetService("CoreGui")
+
+if game.PlaceId == 13358463560 then
+    local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
+    local load = Notification.new("success", "Notification", "Loader Success.", true, 3)
+    -- wait(.5)
+    -- load:changeBody("Loader Success..")
+    -- wait(.5)
+    -- load:changeBody("Loader Success...")
+    -- wait(.5)
+    -- load:changeBody("Loader Success.")
+    -- wait(.5)
+    -- load:changeBody("Loader Success..")
+    -- wait(.5)
+    -- load:changeBody("Loader Success...")
+    -- wait(.5)
     if game:GetService("CoreGui"):FindFirstChild("RH_Menu") or game:GetService("CoreGui"):FindFirstChild("RH_Toggle") then
         Fluent:ToggleAcrylic(false)
         Fluent:ToggleTransparency(false)
         game:GetService("CoreGui"):FindFirstChild("RH_Menu"):Destroy()
         game:GetService("CoreGui"):FindFirstChild("RH_Toggle"):Destroy()
     end
-    local Fluent = loadstring(game:HttpGet("https://pastebin.com/raw/S6HqmTXs"))()
+    local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZenzeiNo1/RainHub/refs/heads/main/Fluent-Rain-Hub.lua"))()
     local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
     local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
-    
+
     local Window = Fluent:CreateWindow({
         Title = "Rain Hub 3.0.0 ",
         SubTitle = "by star.nice",
@@ -38,7 +62,7 @@ if game.PlaceId == 13358463560 then
         Theme = "Midnight",
         MinimizeKey = Enum.KeyCode.RightControl -- Used when theres no MinimizeKeybind
     })
-    
+
     --Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
     local Tabs = {
         Main = Window:AddTab({ Title = "Main", Icon = "cloud" }),
@@ -47,7 +71,7 @@ if game.PlaceId == 13358463560 then
         Cr = Window:AddTab({ Title = "Credit", Icon = "file-box" }),
         Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
     }
-    
+
     local AutoFarmTG = Tabs.Main:AddSection("AutoFarm Toggle")
     local AutoFarmBT = Tabs.Main:AddSection("AutoFarm Button")
     local AutoFarmAntiTG = Tabs.Main:AddSection("AutoFarm Toggle Anti TP")
@@ -57,16 +81,16 @@ if game.PlaceId == 13358463560 then
     local Addon = Tabs.Misc:AddSection("Addon")
     local Bypass = Tabs.Misc:AddSection("Bypass")
     local Credit = Tabs.Cr:AddSection("Credit")
-    
+
     local Options = Fluent.Options
-    
+
     equipitem = function(v)
         if LocalPlayer.Backpack:FindFirstChild(v) then
             local Eq = LocalPlayer.Backpack:FindFirstChild(v)
             Character.Humanoid:EquipTool(Eq)
         end
     end
-    
+
     do
         ----- Main -----
         local Toggle = AutoFarmTG:AddToggle("Auto Clean", 
@@ -90,7 +114,7 @@ if game.PlaceId == 13358463560 then
                         }
                         game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
                     end
-    
+
                     if LocalPlayer.PlayerGui.Main.LabelJob.Text == "Clean the floors!" then
                         local success = Notification.new("success", "Notification", "Success!!!", true, 3)
                         CT:Disable()
@@ -156,7 +180,7 @@ if game.PlaceId == 13358463560 then
             end
         end 
         })
-    
+
         local Toggle = AutoFarmTG:AddToggle("Auto Delivery", 
         {
             Title = "Auto Delivery", 
@@ -213,7 +237,7 @@ if game.PlaceId == 13358463560 then
             end
         end
         })
-    
+
         local Toggle = AutoFarmTG:AddToggle("Auto Run", 
         {
             Title = "Auto Run", 
@@ -221,7 +245,7 @@ if game.PlaceId == 13358463560 then
             Default = false,
             Callback = function(v)
             _G.Run = v
-    
+
             while _G.Run do wait(1)
                 CT:Disable()
                 if not LocalPlayer.Backpack:FindFirstChild("Roadwork Training") then
@@ -275,7 +299,7 @@ if game.PlaceId == 13358463560 then
             end
         end
         })
-    
+
         local Toggle = AutoFarmTG:AddToggle("Auto Run In Senkaimon", 
         {
             Title = "Auto Run In Senkaimon", 
@@ -331,7 +355,7 @@ if game.PlaceId == 13358463560 then
             end
         end
         })
-    
+
         AutoFarmBT:AddButton({
             Title = "Auto Clean",
             Description = "Fully Auto",
@@ -351,7 +375,7 @@ if game.PlaceId == 13358463560 then
                             }
                             game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
                         end
-    
+
                         if game:GetService("Players").LocalPlayer.PlayerGui.Main.LabelJob.Text == "Clean the floors!" then
                             Notification.new("success", "Notification", "Success!!!", true, 3)
                             CT:Disable()
@@ -419,7 +443,7 @@ if game.PlaceId == 13358463560 then
                 end
             end
         })
-    
+
         AutoFarmBT:AddButton({
             Title = "Auto Delivery",
             Description = "Fully Auto",
@@ -439,7 +463,7 @@ if game.PlaceId == 13358463560 then
                             }
                             game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
                         end
-    
+
                         if game:GetService("Players").LocalPlayer.PlayerGui.Main.LabelJob.Text == "Deliver the crate!" then
                             Notification.new("success", "Notification", "Success!!!", true, 3)
                             CT:Disable()
@@ -476,7 +500,7 @@ if game.PlaceId == 13358463560 then
                 end
             end
         })
-    
+
         ----- Auto Farm Anti TP -----
         local Toggle = AutoFarmAntiTG:AddToggle("Auto All Job", 
         {
@@ -536,7 +560,7 @@ if game.PlaceId == 13358463560 then
                         wait(5)
                         CT:Enable()
                     end
-    
+
                     ----- Delivery Job -----
                     if game:GetService("Players").LocalPlayer.PlayerGui.Main.LabelJob.Text == "Deliver the crate!" then 
                         Notification.new("success", "Notification", "Get Delivery Job!!!", true, 3)
@@ -559,7 +583,7 @@ if game.PlaceId == 13358463560 then
             end
         end
         })
-    
+
         local Toggle = AutoFarmAntiTG:AddToggle("Auto Clean", 
         {
             Title = "Auto Clean", 
@@ -581,7 +605,7 @@ if game.PlaceId == 13358463560 then
                         }
                         game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
                     end
-    
+
                     if LocalPlayer.PlayerGui.Main.LabelJob.Text == "Clean the floors!" then
                         local success = Notification.new("success", "Notification", "Success!!!", true, 3)
                         CT:Disable()
@@ -638,7 +662,7 @@ if game.PlaceId == 13358463560 then
             end
         end 
         })
-    
+
         local Toggle = AutoFarmAntiTG:AddToggle("Auto Delivery", 
         {
             Title = "Auto Delivery", 
@@ -695,7 +719,7 @@ if game.PlaceId == 13358463560 then
             end
         end
         })
-    
+
         local Toggle = AutoFarmAntiTG:AddToggle("Auto Run", 
         {
             Title = "Auto Run", 
@@ -703,7 +727,7 @@ if game.PlaceId == 13358463560 then
             Default = false,
             Callback = function(v)
             _G.Run = v
-    
+
             while _G.Run do wait(1)
                 CT:Disable()
                 if not LocalPlayer.Backpack:FindFirstChild("Roadwork Training") then
@@ -744,7 +768,7 @@ if game.PlaceId == 13358463560 then
             end
         end
         })
-    
+
         local Toggle = AutoFarmAntiTG:AddToggle("Auto Run In Senkaimon", 
         {
             Title = "Auto Run In Senkaimon", 
@@ -787,7 +811,7 @@ if game.PlaceId == 13358463560 then
             end
         end
         })
-    
+
         AutoFarmAntiBT:AddButton({
             Title = "Auto Clean",
             Description = "Fully Auto",
@@ -807,7 +831,7 @@ if game.PlaceId == 13358463560 then
                             }
                             game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
                         end
-    
+
                         if game:GetService("Players").LocalPlayer.PlayerGui.Main.LabelJob.Text == "Clean the floors!" then
                             Notification.new("success", "Notification", "Success!!!", true, 3)
                             CT:Disable()
@@ -866,7 +890,7 @@ if game.PlaceId == 13358463560 then
                 end
             end
         })
-    
+
         AutoFarmAntiBT:AddButton({
             Title = "Auto Delivery",
             Description = "Fully Auto",
@@ -886,7 +910,7 @@ if game.PlaceId == 13358463560 then
                             }
                             game:GetService("ReplicatedStorage").Events.EventCore:FireServer(unpack(args))
                         end
-    
+
                         if game:GetService("Players").LocalPlayer.PlayerGui.Main.LabelJob.Text == "Deliver the crate!" then
                             Notification.new("success", "Notification", "Success!!!", true, 3)
                             CT:Disable()
@@ -922,7 +946,7 @@ if game.PlaceId == 13358463560 then
                 end
             end
         })
-    
+
         ----- Teleport -----
         TP:AddButton({
             Title = "Gym",
@@ -984,7 +1008,7 @@ if game.PlaceId == 13358463560 then
                 Notification.new("success", "Notification", "Success!!!", true , 3)
             end
         })
-    
+
         TP:AddButton({
             Title = "Senkaimon",
             Description = "",
@@ -1033,7 +1057,7 @@ if game.PlaceId == 13358463560 then
                 Notification.new("success", "Notification", "Success!!!", true , 3)
             end
         })
-    
+
         TP:AddButton({
             Title = "Burger Queen",
             Description = "",
@@ -1082,7 +1106,7 @@ if game.PlaceId == 13358463560 then
                 Notification.new("success", "Notification", "Success!!!", true , 3)
             end
         })
-    
+
         TP:AddButton({
             Title = "Kami Bank",
             Description = "",
@@ -1131,7 +1155,7 @@ if game.PlaceId == 13358463560 then
                 Notification.new("success", "Notification", "Success!!!", true , 3)
             end
         })
-    
+
         TP:AddButton({
             Title = "Stats Check",
             Description = "",
@@ -1180,7 +1204,7 @@ if game.PlaceId == 13358463560 then
                 Notification.new("success", "Notification", "Success!!!", true , 3)
             end
         })
-    
+
         TP:AddButton({
             Title = "Tournament",
             Description = "",
@@ -1229,7 +1253,7 @@ if game.PlaceId == 13358463560 then
                 Notification.new("success", "Notification", "Success!!!", true , 3)
             end
         })
-    
+
         ----- TeleportNPC -----
         TPNPC:AddButton({
             Title = "Hiro Shi",
@@ -1279,7 +1303,7 @@ if game.PlaceId == 13358463560 then
                 Notification.new("success", "Notification", "Success!!!", true , 3)
             end
         })
-    
+
         TPNPC:AddButton({
             Title = "Brekdak",
             Description = "",
@@ -1328,7 +1352,7 @@ if game.PlaceId == 13358463560 then
                 Notification.new("success", "Notification", "Success!!!", true , 3)
             end
         })
-    
+
         TPNPC:AddButton({
             Title = "André Araújo",
             Description = "",
@@ -1377,7 +1401,7 @@ if game.PlaceId == 13358463560 then
                 Notification.new("success", "Notification", "Success!!!", true , 3)
             end
         })
-    
+
         TPNPC:AddButton({
             Title = "Kwan Jin-soo",
             Description = "",
@@ -1426,7 +1450,7 @@ if game.PlaceId == 13358463560 then
                 Notification.new("success", "Notification", "Success!!!", true , 3)
             end
         })
-    
+
         ------ Misc --------
         
         Bypass:AddButton({
@@ -1434,14 +1458,13 @@ if game.PlaceId == 13358463560 then
             Description = "Bug !!!",
             Callback = function()
             HumanoidRootPart.CFrame = game.Workspace.Map.Seat.CFrame
-            wait(.1)
+            wait(.2)
             Humanoid.Jump = true
             wait(.5)
             HumanoidRootPart.CFrame = CFrame.new(-1709.2572, 4.05218554, -1573.61023, -0.801387548, 5.05635356e-08, -0.598145485, 2.53255372e-08, 1, 5.06030169e-08, 0.598145485, 2.54042707e-08, -0.801387548)
-            game.Workspace.Map.Seat:Destroy()
             end
         })
-    
+
         local Speed Walk = Addon:AddSlider("Speed Walk", 
         {
             Title = "Speed Walk",
@@ -1454,15 +1477,15 @@ if game.PlaceId == 13358463560 then
                 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
             end
         })
-    
+
         Addon:AddButton({
             Title = "Unlock Freeze",
-            Description = "IF Bug Not Move",
+            Description = "IF Bug Can't Move",
             Callback = function()
                 CT:Enable()
             end
         })
-    
+
         Credit:AddButton({
             Title = "Github",
             Description = "Owner : Github",
@@ -1470,18 +1493,18 @@ if game.PlaceId == 13358463560 then
                 setclipboard("https://github.com/ZenzeiNo1/")
             end
         })
-    
+
         SaveManager:SetLibrary(Fluent)
         InterfaceManager:SetLibrary(Fluent)
-    
+
         InterfaceManager:SetFolder("Rain Hub")
         SaveManager:IgnoreThemeSettings()
-    
+
         InterfaceManager:BuildInterfaceSection(Tabs.Settings)
         SaveManager:BuildConfigSection(Tabs.Settings)
-    
+
         Window:SelectTab(1)
-    
+
         Fluent:SetTheme("Midnight")
         
         local ScreenGui = Instance.new("ScreenGui")
@@ -1489,7 +1512,7 @@ if game.PlaceId == 13358463560 then
         local UICorner = Instance.new("UICorner")
         local TextButton = Instance.new("TextButton")
         local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
-    
+
         ScreenGui.Parent = game:GetService("CoreGui")
         ScreenGui.Name = "RH_Toggle"
         Frame.Parent = ScreenGui
@@ -1499,10 +1522,10 @@ if game.PlaceId == 13358463560 then
         Frame.BorderSizePixel = 0
         Frame.Position = UDim2.new(0.0332326293, 0, 0.103015073, 0)
         Frame.Size = UDim2.new(0.0415407866, 0, 0.0690954775, 0)
-    
+
         UICorner.CornerRadius = UDim.new(0, 200)
         UICorner.Parent = Frame
-    
+
         TextButton.Parent = Frame
         TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         TextButton.BackgroundTransparency = 1.000
@@ -1519,11 +1542,12 @@ if game.PlaceId == 13358463560 then
         TextButton.MouseButton1Down:Connect(function()
             Fluent.Window:Minimize()
         end)
-    
+
         UITextSizeConstraint.Parent = TextButton
         UITextSizeConstraint.MaxTextSize = 20
     end
     ToggleUI()
+end
 end
 
 if game.PlaceId == 4954752502 then
