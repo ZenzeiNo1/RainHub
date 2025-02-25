@@ -1774,3 +1774,4 @@ if game.PlaceId == 13358463560 then
         UITextSizeConstraint.MaxTextSize = 20
     end
     ToggleUI()
+end
