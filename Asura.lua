@@ -8,8 +8,8 @@ local CT = require(LocalPlayer.PlayerScripts.PlayerModule):GetControls()
 local VirtualUser = game:GetService('VirtualInputManager')
 local CoreGui = game:GetService("CoreGui")
 
-if game.PlaceId == 13358463560 then
-    local TweenService = game:GetService("TweenService")
+
+local TweenService = game:GetService("TweenService")
 local LocalPlayer = game.Players.LocalPlayer
 local Character = LocalPlayer.Character
 local Humanoid = Character.Humanoid
@@ -1774,4 +1774,3 @@ if game.PlaceId == 13358463560 then
         UITextSizeConstraint.MaxTextSize = 20
     end
     ToggleUI()
-end
